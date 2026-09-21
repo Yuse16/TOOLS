@@ -1,0 +1,14 @@
+{
+  "name": "HorizonX OSS Kit",
+  "version": "0.1.0",
+  "primitives": [
+    "CinematicHero",
+    "GlassOrbCanvas",
+    "TextReveal",
+    "ParallaxSection",
+    "SpotlightCard",
+    "MagneticButton",
+    "ScrollScrubCanvas",
+    "SmoothScrollProvider"
+  ]
+}
