@@ -1,0 +1,5 @@
+'use client'
+import { AnimatePresence,motion } from 'motion/react'
+import { useState } from 'react'
+const scenes=[{id:0,title:'Hospitality',tone:'sa'},{id:1,title:'Architecture',tone:'sb'},{id:2,title:'Technology',tone:'sc'}]
+export function PageTransitions(){const[index,setIndex]=useState(0),scene=scenes[index];return <section className="translab"><AnimatePresence mode="wait"><motion.div key={scene.id} className={`transscene ${scene.tone}`} initial={{clipPath:'inset(0 100% 0 0)'}} animate={{clipPath:'inset(0 0% 0 0)'}} exit={{clipPath:'inset(0 0 0 100%)'}} transition={{duration:.8,ease:[.76,0,.24,1]}}><motion.span initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{delay:.32}}>0{index+1}</motion.span><motion.h2 initial={{y:50,opacity:0}} animate={{y:0,opacity:1}} transition={{delay:.22,duration:.7}}>{scene.title}</motion.h2></motion.div></AnimatePresence><div className="transcontrols">{scenes.map((s,i)=><button key={s.id} className={i===index?'active':''} onClick={()=>setIndex(i)}>{s.title}</button>)}</div></section>}

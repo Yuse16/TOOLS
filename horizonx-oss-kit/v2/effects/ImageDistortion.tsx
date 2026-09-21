@@ -1,0 +1,4 @@
+'use client'
+import { motion,useMotionValue,useSpring } from 'motion/react'
+import type { PointerEvent } from 'react'
+export function ImageDistortion(){const rx=useMotionValue(0),ry=useMotionValue(0),sx=useSpring(rx,{stiffness:80,damping:18}),sy=useSpring(ry,{stiffness:80,damping:18});const move=(e:PointerEvent<HTMLElement>)=>{const r=e.currentTarget.getBoundingClientRect();rx.set(((e.clientY-r.top)/r.height-.5)*-8);ry.set(((e.clientX-r.left)/r.width-.5)*9)};return <section className="distlab" onPointerMove={move}><motion.div className="distframe" style={{rotateX:sx,rotateY:sy}}><div className="distart"><i/><i/><i/></div><div className="distglass"/></motion.div><div className="distcopy"><span>POINTER / DEPTH</span><h2>Make still imagery feel physical.</h2><p>Reemplaza este arte procedural por una foto real.</p></div></section>}

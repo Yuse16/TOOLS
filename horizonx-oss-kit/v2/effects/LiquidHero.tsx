@@ -1,0 +1,4 @@
+'use client'
+import { motion, useMotionValue, useSpring } from 'motion/react'
+import type { PointerEvent } from 'react'
+export function LiquidHero(){const x=useMotionValue(0),y=useMotionValue(0),sx=useSpring(x,{stiffness:60,damping:18}),sy=useSpring(y,{stiffness:60,damping:18});const move=(e:PointerEvent<HTMLElement>)=>{const r=e.currentTarget.getBoundingClientRect();x.set((e.clientX-r.left-r.width/2)*.07);y.set((e.clientY-r.top-r.height/2)*.07)};return <section className="liquid" onPointerMove={move}><motion.div className="blob a" style={{x:sx,y:sy}}/><motion.div className="blob b" style={{x:sy,y:sx}}/><motion.div className="blob c" animate={{rotate:[0,180,360],scale:[1,1.08,1]}} transition={{duration:18,repeat:Infinity,ease:'linear'}}/><div className="liquidcopy"><span>LIQUID INTERFACE</span><h2>Motion that feels <em>fluid, not noisy.</em></h2><p>Ideal para heroes de marca, hospitality y producto premium.</p></div></section>}
