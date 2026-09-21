@@ -1,0 +1,14 @@
+{
+  "name": "HorizonX OSS Kit V2",
+  "version": "0.2.0",
+  "labs": [
+    "liquid-hero",
+    "scroll-sequence",
+    "particle-field",
+    "glass-orb",
+    "image-distortion",
+    "product-3d",
+    "pinned-storytelling",
+    "page-transitions"
+  ]
+}
